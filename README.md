@@ -23,8 +23,4 @@
 * 자바, 스칼라, 파이썬 코드는 거의 대부분 동일한 이름의 파일명, 메서드명을 사용하는 것을 원칙으로 하였으나 일부 언어에 따른 특성 상 일치하지 않는 경우도 있습니다. 
 * 인텔리제이 사용 시 Project Settings -> Modules -> Dependences 탭에서 스칼라(scala-sdk-2.11.*)와 파이썬 라이브러리 및 pyspark 라이브러리(`<spark_home>/python/pyspark.zip, <spark_home>/python/lib/py4j-0.10.4-src.zip`)를 추가해 주어야 합니다.  
 * 스칼라IDE는 가급적 최신 버전 사용을 권장합니다. 
-* 스칼라IDE 구 버전의 경우 자바 코드 내에서 스칼라 오브젝트를 인식하지 못하는 경우가 종종 발생되는데 이 경우 Project -> Properties -> Java Build Path -> Order and Export 탭에서 "Scala Library container" 항목을 토글(toggle, 선택과 해제를 반복)하는 방식으로 재 빌드를 유도하면 해결되는 경우가 있습니다.
-
-## 오류 사항
-* [예제7-12] StreamingQuery를 이용한 모니터링(MonitoringSample.scala) 
-  * def monitor(query: StreamingQuery) 메서드 내부에서 Thread 클래스의 run 메서드 호출을 start 메서드 호출로 정정합니다.
+* 스칼라IDE 구 버전의 경우 정상적인 소스코드임에도 불구하고 에디터 상에서만 오류로 표시되는 경우가 종종 발생되는데 이 경우 Project -> Properties -> Java Build Path -> Order and Export 탭에서 "Scala Library container" 또는 "Maven Dependencies" 항목을 토글(toggle, 선택과 해제를 반복)하거나 "UP", "DOWN" 버튼으로 순서를 바꾸는 방식으로 재 빌드를 유도하면 대부분의 경우 해결할 수 있습니다.
